@@ -1,0 +1,483 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body,
+html {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    background: #000;
+    color: #fff;
+}
+
+/* Video Background */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -2;
+}
+
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%);
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+/* Content Styles */
+.content {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 100px 0;
+}
+
+/* Header Styles */
+.header {
+    margin-bottom: 50px;
+}
+
+.header h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    position: relative;
+    animation: flicker 1.5s infinite alternate;
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+}
+
+@keyframes flicker {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+.glitch {
+    position: relative;
+    display: inline-block;
+    font-size: 3em;
+    color: #fff;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 magenta;
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim 2.5s infinite;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 cyan;
+    clip: rect(44px, 550px, 65px, 0);
+    animation: glitch-anim 3s infinite;
+}
+
+@keyframes glitch-anim {
+    0% {
+        clip: rect(42px, 9999px, 44px, 0);
+    }
+
+    10% {
+        clip: rect(18px, 9999px, 53px, 0);
+    }
+
+    20% {
+        clip: rect(18px, 9999px, 40px, 0);
+    }
+
+    30% {
+        clip: rect(32px, 9999px, 73px, 0);
+    }
+
+    40% {
+        clip: rect(50px, 9999px, 74px, 0);
+    }
+
+    50% {
+        clip: rect(46px, 9999px, 51px, 0);
+    }
+
+    60% {
+        clip: rect(36px, 9999px, 64px, 0);
+    }
+
+    70% {
+        clip: rect(26px, 9999px, 88px, 0);
+    }
+
+    80% {
+        clip: rect(13px, 9999px, 57px, 0);
+    }
+
+    90% {
+        clip: rect(41px, 9999px, 66px, 0);
+    }
+
+    100% {
+        clip: rect(51px, 9999px, 73px, 0);
+    }
+}
+
+/* Subtitle */
+.subtitle {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    animation: fadeInUp 2s forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Neon Button Styles */
+.neon-button {
+    margin: 20px;
+    padding: 15px 30px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+}
+
+.neon-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: linear-gradient(45deg, rgba(255, 0, 255, 0.5), rgba(0, 255, 0, 0.5), rgba(0, 255, 255, 0.5), rgba(255, 0, 0, 0.5));
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.5s ease;
+}
+
+.neon-button:hover::before {
+    transform: scaleX(1);
+}
+
+.neon-button:hover {
+    background-color: #ff00ff;
+    color: #000;
+    box-shadow: 0 0 20px #fff, 0 0 40px #ff00ff, 0 0 60px #ff00ff;
+}
+
+/* Navigation Bar */
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    transition: top 0.3s;
+}
+
+.nav-bar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.nav-bar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.nav-bar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.nav-bar ul li a:hover {
+    color: #ff00ff;
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 60px;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    position: relative;
+}
+
+/* About Me Section */
+.about-section {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border: 2px solid #ff00ff;
+}
+
+.about-section .section-title {
+    color: #ff00ff;
+    animation: slideInFromLeft 1.5s ease-out forwards;
+}
+
+.about-section .description {
+    font-size: 1.2em;
+    animation: fadeIn 2s forwards;
+}
+
+/* My Work Section */
+.portfolio-section {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border: 2px solid #00ff00;
+}
+
+.portfolio-section .section-title {
+    color: #00ff00;
+    animation: slideInFromRight 1.5s ease-out forwards;
+}
+
+.portfolio-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.portfolio-item {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ff00;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00ff00;
+}
+
+.portfolio-image {
+    width: 100%;
+    height: auto;
+}
+
+.portfolio-info {
+    padding: 15px;
+    color: #fff;
+}
+
+.portfolio-info h3 {
+    margin-bottom: 10px;
+}
+
+/* Contact Section */
+.contact-section {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border: 2px solid #00ffff;
+}
+
+.contact-section .section-title {
+    color: #00ffff;
+    animation: slideInFromBottom 1.5s ease-out forwards;
+}
+
+.contact-section p {
+    font-size: 1.2em;
+    animation: fadeIn 2s forwards;
+}
+
+.contact-buttons {
+    margin-top: 20px;
+}
+
+.contact-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 30px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px #fff, 0 0 20px #00ffff;
+}
+
+.contact-button:hover {
+    background-color: #00ffff;
+    color: #000;
+    box-shadow: 0 0 20px #fff, 0 0 40px #00ffff;
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 20px;
+    opacity: 0;
+}
+
+/* Animations */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-30px);
+    }
+
+    60% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-bar ul li {
+        display: none;
+        margin: 10px 0;
+    }
+
+    .header h1 {
+        font-size: 2.5em;
+    }
+
+    .section {
+        padding: 20px;
+    }
+
+    .neon-button {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .portfolio-item {
+        width: 100%;
+    }
+}

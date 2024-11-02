@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahromjon Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./media/hacker.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+       
+    </style>
+</head>
+
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="bg-video">
+            <source src="background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="overlay"></div>
+    <div class="content">
+        <header class="header">
+            <h1 class="glitch" data-text="Bahromjon Dasturchi">Bahromjon Dasturchi</h1>
+            <p class="subtitle">Dasturchi & Dizayner</p>
+            <div class="button-group">
+                <button class="neon-button" onclick="scrollToSection('about')">Men haqimda</button>
+                <button class="neon-button" onclick="scrollToSection('portfolio')"> Men qila olaman</button>
+                <button class="neon-button" onclick="scrollToSection('contact')">Bog'lanish</button>
+            </div>
+        </header>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="#about" onclick="scrollToSection('about')">Men haqimda</a></li>
+                <li><a href="#portfolio" onclick="scrollToSection('portfolio')">Men qila olaman</a></li>
+                <li><a href="#contact" onclick="scrollToSection('contact')">Bog'lanish</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section id="about" class="section about-section">
+                <h2 class="section-title">Men haqimda</h2>
+                <p class="description">Men Bahromjon, kod yozishga va yangi texnologiyalarni o‘rganishga katta qiziqish
+                    bilan shug‘ullanaman. Web rivojlantirish bilan shug'ullanish va dasturlashdagi yangi bilimlarni
+                    o'zlashtirish yo‘lida qat’iyman. Mening orzuim – kuchli va ijodiy dasturchi bo‘lib, texnologiya
+                    orqali dunyoga ijobiy o‘zgarishlar kiritish.</p>
+            </section>
+            <section id="portfolio" class="section portfolio-section">
+                <h2 class="section-title">Men qila olaman</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <img src="./media/DALL·E 2024-11-02 19.42.05 - A modern digital illustration of a young, skilled coder in a focused workspace. The setting has a futuristic feel, with dual monitors displaying code .webp"
+                            alt="Project 1" class="portfolio-image">
+                        <div class="portfolio-info">
+                            <h3>Dasturlash</h3>
+                            <p>Professional darajada dasturlab beraman</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="./media/rang.png" alt="Project 2" class="portfolio-image">
+                        <div class="portfolio-info">
+                            <h3>Dizayner</h3>
+                            <p>Creativ dizaynerlash, Sizga mos keladigan dizaynlarni yasab beraman</p>
+                        </div>
+                    </div>
+                    <!-- Add more portfolio items as needed -->
+                </div>
+            </section>
+            <section id="contact" class="section contact-section">
+                <h2 class="section-title">Bog'lanish</h2>
+                <p>Phone: +998 88 626 06 20
+                </p>
+                <p>Tugmalarni bosib aloqaga chiqing⬇️</p>
+                <div class="contact-buttons">
+                    <a href="tel:+998886260620" class="contact-button">Qo'ng'iroq qilish</a>
+                    <a href="https://t.me/iBaxromjon" class="contact-button" target="_blank">Telegramdan yozish</a>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p>&copy; 2024 Developer Name. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="java.js"></script>
+</body>
+
+</html>
